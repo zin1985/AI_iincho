@@ -20,6 +20,15 @@
 - Nと同じ `gemma-4-26b-a4b-it-uncensored` のモデルAPIで、学習前後それぞれ3問、合計6発話を比較。入力4,489、出力505トークン
 - APIモデルの重みは再学習していない。経験記録を入力したことで、生成した回答や振り返りが変わった
 
+## 内省を実際に見てみる
+
+- **[0日目・9日目・17日目の内省例（同じNモデルAPIで生成）](results/18day-cognitive-voice.md)**
+- [9領域＋3統合を活性化したときの計算と18日実験](results/18day-active-9plus3.md)
+- [9領域の評価モジュール（実験用コード）](examples/brain_9plus3_cognitive_loop.py)
+- [対応する回帰テスト](examples/test_brain_9plus3_cognitive_loop.py)
+
+実験版の成果は従来の9＋3比 **51.62% → 53.01%**（18日間・seed 901）。差が小さいため、本番Nへの適用は保留しています。
+
 ## 9領域＋3統合の仕組み
 
 ```mermaid
