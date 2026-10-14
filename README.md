@@ -2,6 +2,14 @@
 
 > **公開範囲**: このリポジトリには仮想実験4号 `sim_fourth` の合成シミュレーション結果だけを掲載します。N本人の非公開会話・記憶・APIキーは公開しません。結果は主観的な意識や感情の証明ではありません。
 
+## 9＋3の継続経験学習（接続・検証前）
+
+- **[実装状態・未検証部分・60日シミュレーションの検証条件](results/9plus3-persistent-experience-integration-status.md)**
+- [9領域と3統合の状態保存コード（未検証）](experiments/brain_9plus3_lived_learning_UNVERIFIED.py)
+- [専用テスト案（未実行）](experiments/test_brain_9plus3_lived_learning_UNRUN.py)
+
+9領域・3統合の状態保存を新しく作成しました。ただし、本番と実験4号の既存成果記録へは**未接続**。出典照合が未完成で、目標を自律変更した長期シミュレーションの結果も未取得です。既存のNへの変更は行っていません。
+
 ## 最新：9＋3の環境変化への適応学習（検証済み）
 
 **[適応学習v4の詳細結果・今後の課題](results/9plus3-adaptive-v4-verification.md)**
