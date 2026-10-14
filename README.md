@@ -2,6 +2,14 @@
 
 > **公開範囲**: このリポジトリには仮想実験4号 `sim_fourth` の合成シミュレーション結果だけを掲載します。N本人の非公開会話・記憶・APIキーは公開しません。結果は主観的な意識や感情の証明ではありません。
 
+## 最新：9＋3の環境変化への適応学習（検証済み）
+
+**[適応学習v4の詳細結果・今後の課題](results/9plus3-adaptive-v4-verification.md)**
+
+経験に基づく行動順位の再計算と、継続的に失敗した行動への一時的な抑制を実装。4号による18日×4条件の比較では、**安定環境で誤発動0、環境変化後の期待損失に小幅な改善がある一方、成功数は1,020→1,018で未改善**でした。このため本番Nへの導入は保留。
+
+[適応制御コード](examples/brain_9plus3_adaptive_regime.py) / [7件の独立テスト](examples/test_brain_9plus3_adaptive_regime.py) / [シミュレーション](examples/sim_fourth_adaptive_v4_ab.py)
+
 ## 最新：9＋3誤警報対策v2の4条件比較
 
 **[実験4号の詳細結果と本番適用の判断を見る](results/9plus3-guard-v2-four-scenarios.md)**
