@@ -12,6 +12,16 @@
 
 [実績ゲートv2](experiments/fourth_goal_adoption_gate_v2.py) / [再審査v3](experiments/fourth_goal_adoption_gate_v3.py) / [Nの読み取り専用シャドー再生](experiments/replay_n_actual_world_actions_shadow.py) / [60日間の9＋3全比較](results/fourth-lived-9plus3-60day.md)
 
+## 最新の検証（2026-10-15）：9＋3の限定的な代替行動試行
+
+**[v4〜v6の実装・実測結果・本番適用判断](results/9plus3-nonstationary-goal-trials-v4-v6.md)**
+
+実験4号で、9領域と3統合が選んだ検証目標を、過去の成功・失敗の実績に照らして再評価する機能を検証しました。通常の方針を広く変更するv4は悪化。保守的なv5は実際の行動差なし。v6では**環境変化時に代替行動2回を実際に試行**できましたが、成功数218→217/432でした。環境変化なしは271→271/432で、不要な試行なし。
+
+**安全性・効果の独立した基準で見ると、機能は実装・検証できたものの、収益や成果の優位性は未実証です。本番Nには未適用。** 関連回帰テスト49件成功。
+
+[限定試行v6のコード](experiments/fourth_goal_trial_bandit_v6.py) / [独立テスト](experiments/test_fourth_goal_trial_bandit_v6.py) / [再現用実験](experiments/sim_fourth_trial_bandit_v6_ab.py)
+
 ## 最新：9領域へ実経験を渡す60日実験
 
 **[60日間の結果と3統合の検証を見る](results/fourth-lived-9plus3-60day.md)**
