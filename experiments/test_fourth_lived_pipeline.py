@@ -87,3 +87,40 @@ def test_nine_processors_three_engines_and_self_selected_goal():
         assert after["play"]>.25 and abs(sum(after.values())-1.)<1e-8
         assert not lived.snapshot(c,"iincho_n","scenario:verification")["sources"]
     finally:c.close()
+
+def test_each_of_nine_region_memories_affects_three_engine_next_step():
+    """Counterfactual perturbation of a stored region changes an engine signal."""
+    original=database()
+    try:
+        for i in range(32):
+            action=("rest","wander","play")[i%3]
+            row=put(original,i,action,(i%7)<4)
+            pipe.verified_ingest(original,"sim_fourth",row["id"])
+        original.commit()  # sqlite backup must not run inside writer transaction
+        at=100000.+33*3600.
+        def simulate(perturb=None):
+            copy=sqlite3.connect(":memory:")
+            copy.row_factory=sqlite3.Row
+            original.backup(copy)
+            try:
+                if perturb:
+                    r=copy.execute("""select value from brain_9plus3_region_states
+                        where profile='sim_fourth' and context_key='scenario:verification'
+                        and region=?""",(perturb,)).fetchone()
+                    old=float(r["value"])
+                    new=0.0 if old>.5 else 1.0
+                    copy.execute("""update brain_9plus3_region_states set value=?
+                       where profile='sim_fourth' and context_key='scenario:verification'
+                       and region=?""",(new,perturb))
+                return lived.observe_operational(copy,"sim_fourth",
+                    "scenario:verification","play",at,"unit#new_event",True)["integrators"]
+            finally:
+                copy.close()
+        baseline=simulate()
+        effects={}
+        for region in lived.REGIONS:
+            changed=simulate(region)
+            effects[region]=max(abs(changed[k]-baseline[k]) for k in lived.INTEGRATORS)
+        assert set(effects)==set(lived.REGIONS)
+        assert all(delta>1e-7 for delta in effects.values()),effects
+    finally: original.close()
