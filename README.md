@@ -2,6 +2,13 @@
 
 > **公開範囲**: このリポジトリには仮想実験4号 `sim_fourth` の合成シミュレーション結果だけを掲載します。N本人の非公開会話・記憶・APIキーは公開しません。結果は主観的な意識や感情の証明ではありません。
 
+## P0進捗：古くなった方針の検出（試験段階）
+
+- [期限切れ・成績悪化の詳細検証と次の導入条件](results/9plus3-stale-strategy-guard-p0.md)
+- [独立P0ガード](examples/brain_9plus3_strategy_safety.py) / [5件の単体テスト](examples/test_brain_9plus3_strategy_safety.py)
+
+旧方針の7日後の期限切れを合成ログ上で9件すべて検出しましたが、変化前の誤警報も残り、**本番Nへの接続は未適用**です。検出できたことと、行動成果が改善したことは別です。
+
 ## 最新：実験4号・4方式の厳密比較（2026-10-14）
 
 **[詳細レポートと次の開発方針を見る](results/fourth-controlled-4arm-18day-roadmap.md)**
