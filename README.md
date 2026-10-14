@@ -2,6 +2,16 @@
 
 > **公開範囲**: このリポジトリには仮想実験4号 `sim_fourth` の合成シミュレーション結果だけを掲載します。N本人の非公開会話・記憶・APIキーは公開しません。結果は主観的な意識や感情の証明ではありません。
 
+## 最新：9領域へ実経験を渡す60日実験
+
+**[60日間の結果と3統合の検証を見る](results/fourth-lived-9plus3-60day.md)**
+
+4号の実際の仮想世界イベントと採点結果を照合して、9領域・3統合機構の課題別継続状態へ自動記録。隔離環境で20件の関連テストに成功。
+
+最初の3方式（各1,440行動）では従来方式62.57%、9領域のみ64.17%、9＋3全機能64.44%。内部の検証目標も5回切り替わりました。**1シードの合成実験なので一般化は保留**。本番Nには未適用です。
+
+[経験の出典照合と目標選択](experiments/fourth_lived_pipeline.py) / [9領域と3統合の保存コード](experiments/brain_9plus3_lived_learning_v1.py) / [長期比較](experiments/sim_fourth_lived_longrun.py) / [監査](experiments/audit_fourth_lived_9plus3.py)
+
 ## 9＋3の継続経験学習（接続・検証前）
 
 - **[実装状態・未検証部分・60日シミュレーションの検証条件](results/9plus3-persistent-experience-integration-status.md)**
