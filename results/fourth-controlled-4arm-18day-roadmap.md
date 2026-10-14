@@ -139,7 +139,7 @@
 ## 再現手順と検証データ
 
 ```powershell
-cd C:\Users\zin\Documents\GitHub\daino
+cd <daino-repository>
 $env:FOURTH_LONG_DAYS='18'
 python -m tools.sim_fourth_controlled_suite --seed 924
 python -m tools.audit_controlled_fourth_suite --seeds 921 922 923 924 --days 18
