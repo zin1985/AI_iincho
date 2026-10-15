@@ -12,6 +12,16 @@
 
 [実績ゲートv2](experiments/fourth_goal_adoption_gate_v2.py) / [再審査v3](experiments/fourth_goal_adoption_gate_v3.py) / [Nの読み取り専用シャドー再生](experiments/replay_n_actual_world_actions_shadow.py) / [60日間の9＋3全比較](results/fourth-lived-9plus3-60day.md)
 
+## 最新：4号の発話・内省まで検証（2026-10-15）
+
+**[60日 × 6条件、720件の発話・内省候補のA/Bレポート](results/9plus3-fourth-speech-reflection-60day.md)**
+
+実験4号の12分類による経験蓄積を、毎日の発話・内省候補まで具体化して検証。旧方式は2〜3話題、新方式は6〜7話題を選択。制作頻度を増やした後半30日で、制作への注目は従来0日から新方式22・30・23日に変化。
+
+**重要：今回は実験4号の生成モデルではなく、根拠ID付きの規則生成による代理発話。自然な自律発話や本人の主観的内省を検証済みとは扱わない。** 60日シミュレーターのSQLite保存漏れを修正し、12隔離DBの読み直しと関連14テスト成功。本番Nは今回未変更。
+
+[発話・内省の再現コード](experiments/sim_fourth_speech_reflection_60d.py) ／ [比較用の具体例](results/fourth-speech-reflection-samples.json) ／ [検証テスト](experiments/test_fourth_speech_reflection_facets.py)
+
 ## 9＋3実験4号：v7の試行結果を9領域へ再学習
 
 **[v7の全6条件A/B・試行の出典付き監査レポート](results/9plus3-v7-verified-exploration.md)**
