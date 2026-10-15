@@ -29,9 +29,17 @@ def trial_audit(arm):
               where event_id=? and profile='sim_fourth' and context_key=?
               and action=? and source_kind='simulation_environment'""",
               (evt["id"] if evt is not None else -1,intent["context_key"],intent["candidate"])).fetchone() if did else None
+            if grade is not None:
+                brain=c.execute("""select region_json,integrators_json from
+                   brain_9plus3_lived_events where profile='sim_fourth'
+                   and source_id=?""",("brain_9plus3_task_outcomes#"+str(grade["id"]),)).fetchone()
+                assert brain is not None,"trial outcome not fed back into nine-region ledger"
+                assert len(json.loads(brain["region_json"]))==9
+                assert len(json.loads(brain["integrators_json"]))==3
             details.append({"step":int((float(intent["at"])-1792040000.)//3600.),
                 "candidate":intent["candidate"],"executed":did,
                 "graded":grade is not None,
+                "fed_into_all_nine_and_three":grade is not None,
                 "success":bool(grade["task_success"]) if grade is not None else None,
                 "grade_id":int(grade["id"]) if grade is not None else None})
         return {"requested":len(details),"executed":sum(x["executed"] for x in details),
