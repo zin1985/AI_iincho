@@ -14,13 +14,13 @@
 
 ## 9＋3実験4号：v7の試行結果を9領域へ再学習
 
-**[v7の実測比較・出典監査レポートを見る](results/9plus3-v7-verified-exploration.md)**
+**[v7の最新実測比較・出典監査レポートを見る](results/9plus3-v7-verified-exploration.md)**
 
-v7では、限定試行を確実に世界イベントへ反映し、採点済みの成功・失敗が**9領域と3統合機構の記録へ実際に伝わったことを照合**。同じ代替候補で2連続失敗した場合には課題別に3仮想日間の試行を休止。通常の9＋3判断は維持しています。
+代替行動の試行を世界イベントで確実に実行し、実際の課題採点が**9領域と3統合機構へ反映されたことを出典IDで確認**。同じ代替候補で2回続けて失敗したときは、3仮想日間の試行停止（専用テスト通過）。通常の9＋3の方針を保存。
 
-検証は複数乱数条件で継続中です。初期2条件（9日目環境変更）では従来453/864、新方式453/864。**機構の動作は確認できましたが、成功数の改善は未実証です。** 本番NのDBと方針は未変更。
+9日目環境変更の**3乱数A/B：従来700/1,296、v7は698/1,296**。試行9回の実行・採点を確認しましたが、成功数と期待損失はわずかに悪化。したがって**本番Nには未適用**です。環境変化なしの条件も比較中です。
 
-[実装](experiments/fourth_goal_trial_bandit_v7.py) / [出典付き監査](experiments/audit_fourth_trial_v7_verified.py) / [再現スクリプト](experiments/sim_fourth_trial_bandit_v7_ab.py) / [テスト](experiments/test_fourth_goal_trial_bandit_v7.py)
+[実装](experiments/fourth_goal_trial_bandit_v7.py) / [出典・9領域・3統合の監査](experiments/audit_fourth_trial_v7_verified.py) / [シミュレーション](experiments/sim_fourth_trial_bandit_v7_ab.py) / [単体テスト](experiments/test_fourth_goal_trial_bandit_v7.py)
 
 ## 最新の検証（2026-10-15）：9＋3の限定的な代替行動試行
 
