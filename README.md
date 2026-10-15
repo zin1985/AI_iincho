@@ -12,6 +12,16 @@
 
 [実績ゲートv2](experiments/fourth_goal_adoption_gate_v2.py) / [再審査v3](experiments/fourth_goal_adoption_gate_v3.py) / [Nの読み取り専用シャドー再生](experiments/replay_n_actual_world_actions_shadow.py) / [60日間の9＋3全比較](results/fourth-lived-9plus3-60day.md)
 
+## 9＋3実験4号：v7の試行結果を9領域へ再学習
+
+**[v7の実測比較・出典監査レポートを見る](results/9plus3-v7-verified-exploration.md)**
+
+v7では、限定試行を確実に世界イベントへ反映し、採点済みの成功・失敗が**9領域と3統合機構の記録へ実際に伝わったことを照合**。同じ代替候補で2連続失敗した場合には課題別に3仮想日間の試行を休止。通常の9＋3判断は維持しています。
+
+検証は複数乱数条件で継続中です。初期2条件（9日目環境変更）では従来453/864、新方式453/864。**機構の動作は確認できましたが、成功数の改善は未実証です。** 本番NのDBと方針は未変更。
+
+[実装](experiments/fourth_goal_trial_bandit_v7.py) / [出典付き監査](experiments/audit_fourth_trial_v7_verified.py) / [再現スクリプト](experiments/sim_fourth_trial_bandit_v7_ab.py) / [テスト](experiments/test_fourth_goal_trial_bandit_v7.py)
+
 ## 最新の検証（2026-10-15）：9＋3の限定的な代替行動試行
 
 **[v4〜v6の実装・実測結果・本番適用判断](results/9plus3-nonstationary-goal-trials-v4-v6.md)**
